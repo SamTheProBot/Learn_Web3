@@ -8,24 +8,28 @@ contract SimpleStorage {
         bool isEligible;
     }
 
-    int256  YourFavNumber = 0; 
+    int256 YourFavNumber = 0;
 
     player[] public AllPlarticipent;
 
-    mapping(string =>  uint32) public cheakAge;  
+    mapping(string => uint32) public cheakAge;
 
-    function SetYouFavNumber(int256 _YouFavNumber) public virtual  {
+    function SetYouFavNumber(int256 _YouFavNumber) public virtual {
         YourFavNumber = _YouFavNumber;
     }
 
-    function GetYouFavNumber() public view returns (int256) { 
-        return  YourFavNumber;
-    }
- 
-    function addAthelete(string memory _name, uint32 _age, bool _isEligible) public {
-        AllPlarticipent.push(player({name: _name,age: _age,isEligible: _isEligible}));
-        cheakAge [_name] = _age;
+    function GetYouFavNumber() public view returns (int256) {
+        return YourFavNumber;
     }
 
+    function addAthelete(
+        string memory _name,
+        uint32 _age,
+        bool _isEligible
+    ) public {
+        AllPlarticipent.push(
+            player({name: _name, age: _age, isEligible: _isEligible})
+        );
+        cheakAge[_name] = _age;
+    }
 }
-

@@ -3,14 +3,13 @@
 // SPDX-License-Identifier: MIT
 
 pragma solidity >=0.8.2 <0.9.0;
-import "./daala.sol";
 
-error notDulha();
+import "./daala.sol";
 
 contract FundMe {
     using ShaadiReturns for uint256;
-    uint256 public constant MIN_DAAHEJ = 50 * 1e18;
-    address public immutable Dulha;
+    uint256 public minimumDaahejAmount = 50 * 1e18;
+    address public Dulha;
 
     constructor() {
         Dulha = msg.sender;
@@ -20,12 +19,15 @@ contract FundMe {
     mapping(address => uint256) public DaahejAmount;
 
     function Daahej() public payable {
-        if (msg.value.getConversionRate() >= MIN_DAAHEJ) revert notDulha();
+        require(
+            msg.value.getConversionRate() >= minimumDaahejAmount,
+            "bitiya ke saadi mai paisa nahi mikala"
+        );
         GiftDoners.push(msg.sender);
         DaahejAmount[msg.sender] += msg.value;
     }
 
-    function OrderFortuner() public onlyDulahPariwar {
+    function OrderFortuner() public {
         for (uint128 i = 0; i < GiftDoners.length; i++) {
             address risteDaarKaNaam = GiftDoners[i];
             DaahejAmount[risteDaarKaNaam] = 0;
@@ -36,16 +38,10 @@ contract FundMe {
     }
 
     modifier onlyDulahPariwar() {
-        // if (msg.sender != Dulha) revert notDulha();
-        require(msg.sender == Dulha, notDulha());
+        require(
+            msg.sender == Dulha,
+            "aabe saale tu dulha nahi hai, baag yaha se"
+        );
         _;
-    }
-
-    receive() external payable {
-        Daahej();
-    }
-
-    fallback() external payable {
-        Daahej();
     }
 }

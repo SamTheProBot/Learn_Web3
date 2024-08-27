@@ -5,18 +5,17 @@ import "./simplStorage.sol";
 
 contract StorageFactory {
     SimpleStorage[] public simpleStorageArray;
-   
-    function DeployContract () public {
+
+    function DeployContract() public {
         SimpleStorage simpleStorageInstance = new SimpleStorage();
         simpleStorageArray.push(simpleStorageInstance);
-    }     
+    }
 
-    function StoreContract (uint256 _StorageIndex, int256 _StorageValue) public  {
+    function StoreContract(uint256 _StorageIndex, int256 _StorageValue) public {
         simpleStorageArray[_StorageIndex].SetYouFavNumber(_StorageValue);
     }
 
-    function GetContract (uint256 _StorageIndex) public view returns(int256) {
+    function GetContract(uint256 _StorageIndex) public view returns (int256) {
         return simpleStorageArray[_StorageIndex].GetYouFavNumber();
-        
-    }   
+    }
 }
