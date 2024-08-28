@@ -1,0 +1,16 @@
+{
+  "name": "deprecated",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo hello && exit 1",
+    "dev": "bun hardhat run scripts/deply.js"
+  },
+  "type": "commonjs",
+  "license": "ISC",
+  "dependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "dotenv": "^16.4.5",
+    "ethers": "^6.13.2",
+    "hardhat": "^2.22.9"
+  }
+}
