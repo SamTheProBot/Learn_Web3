@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "Deploy": "rm -rf ./ignition/deployments && bun hardhat ignition deploy ignition/modules/FundMe.ts --network localhost"
+    "newDeploy": "rm -rf ./ignition/deployments && bun hardhat ignition deploy ignition/modules/FundMe.ts --network localhost",
+    "Deploy": "bun hardhat ignition deploy ignition/modules/FundMe.ts --network localhost"
   },
   "devDependencies": {
     "chai": "4",

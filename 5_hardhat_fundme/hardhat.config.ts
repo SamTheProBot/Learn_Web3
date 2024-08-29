@@ -5,7 +5,7 @@ import '@typechain/hardhat';
 import dotenv from 'dotenv';
 dotenv.config();
 
-export const chainToDeploy = 'sepolia';
+export const chainToDeploy = 'localhost';
 
 const SEPOLIA_RPC_URL = process.env.SEPOLIA_RPC_URL || '';
 const PRIVATE_KEY = process.env.PRIVATE_KEY || '';

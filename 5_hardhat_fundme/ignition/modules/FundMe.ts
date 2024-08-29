@@ -17,9 +17,9 @@ export default buildModule('FundMe', (m) => {
 
   if (network.name == 'localhost') {
     const { MockV3Aggregator } = m.useModule(Mock);
-    priceFeed = MockV3Aggregator.type;
+    priceFeed = MockV3Aggregator;
     owner = m.getAccount(1);
-    user = m.getAccount(3);
+    user = m.getAccount(2);
   }
 
   const contract = m.contract('FundMe', [priceFeed], {
