@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "@chainlink/contracts": "^1.2.0",
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@types/chai": "4",
+    "@types/mocha": "^10.0.7",
+    "@types/node": "^22.5.1",
+    "chai": "4",
+    "dotenv": "^16.4.5",
+    "hardhat": "^2.22.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  }
+}
