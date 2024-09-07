@@ -14,7 +14,6 @@ export default buildModule('FundMe', (m) => {
   let priceFeed = useChain.priceFeed;
   let owner: any = PUBLIC_KEY;
   let user: any = PUBLIC_KEY;
-
   if (network.name == 'localhost') {
     const { MockV3Aggregator } = m.useModule(Mock);
     priceFeed = MockV3Aggregator;

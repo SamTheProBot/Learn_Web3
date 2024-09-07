@@ -1,6 +1,7 @@
 import { HardhatUserConfig } from 'hardhat/config';
 import '@nomicfoundation/hardhat-toolbox';
 import '@nomicfoundation/hardhat-ignition-ethers';
+import '@nomicfoundation/hardhat-ethers';
 import '@typechain/hardhat';
 import dotenv from 'dotenv';
 dotenv.config();
@@ -11,7 +12,7 @@ const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || '';
 
 const config: HardhatUserConfig = {
   solidity: {
-    compilers: [{ version: '0.8.0' }, { version: '0.8.26' }],
+    compilers: [{ version: '0.8.0' }, { version: '0.8.26' }, { version: '0.8.19' }],
   },
   defaultNetwork: 'hardhat',
   networks: {
